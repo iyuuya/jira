@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
@@ -37,9 +38,12 @@ func realMain() exitcode.ExitCode {
 		return exitcode.ExitError
 	}
 
-	for _, v := range issues {
-		fmt.Printf("%s\n", v.Key)
+	json, err := json.Marshal(issues)
+	if err != nil {
+		fmt.Printf("Failed to encode json: %s\n", err)
+		return exitcode.ExitError
 	}
+	fmt.Printf("%s\n", json)
 
 	return exitcode.ExitOK
 }
