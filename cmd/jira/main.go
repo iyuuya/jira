@@ -8,7 +8,7 @@ import (
 	jira "github.com/andygrunwald/go-jira"
 	"github.com/iyuuya/go/exitcode"
 
-	"github.com/iyuuya/jira/internal/cmd"
+	"github.com/iyuuya/jira/internal/jira/cmd"
 )
 
 func main() {
