@@ -1,2 +1,2 @@
 .envrc
-bin/jira
+bin/*
