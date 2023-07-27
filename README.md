@@ -1,3 +1,11 @@
+## Configuration
+
+```shell
+export JIRA_HOST=https://hoge.atlassian.net
+export JIRA_USERNAME=your-email@example.com
+export JIRA_API_TOKEN=personal-api-token
+```
+
 ## Example
 
 ```
