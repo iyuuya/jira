@@ -15,7 +15,7 @@ var issueRootCmd = &cobra.Command{
 }
 
 var issueListCmd = &cobra.Command{
-	Use: "ls",
+	Use: "ls [PROJECT_KEY]",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		cl, err := client.NewClient(cmd.Context())
 		if err != nil {
@@ -32,7 +32,6 @@ var issueListCmd = &cobra.Command{
 				query += " AND " + v
 			}
 		}
-		// fmt.Printf("JQL: %s\n", query)
 
 		issues, _, err := cl.Issue.Search(query, nil)
 		if err != nil {
