@@ -12,3 +12,10 @@ bin/jira:
 
 bin/jql:
 	@go build -o bin/jql github.com/iyuuya/jira/cmd/jql
+
+install: install/jira install/jql
+
+install/jira:
+	@go install github.com/iyuuya/jira/cmd/jira
+install/jql:
+	@go install github.com/iyuuya/jira/cmd/jql
